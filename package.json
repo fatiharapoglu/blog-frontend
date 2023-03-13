@@ -1,0 +1,44 @@
+{
+    "name": "blog-frontend",
+    "private": true,
+    "version": "0.1.0",
+    "description": "react",
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/fatiharapoglu/blog-frontend.git"
+    },
+    "keywords": [],
+    "author": "Fatih Arapoğlu",
+    "license": "MIT",
+    "bugs": {
+        "url": "https://github.com/fatiharapoglu/blog-frontend/issues"
+    },
+    "homepage": "https://github.com/fatiharapoglu/blog-frontend#readme",
+    "type": "module",
+    "scripts": {
+        "dev": "vite",
+        "build": "vite build",
+        "preview": "vite preview"
+    },
+    "dependencies": {
+        "react": "^18.2.0",
+        "react-dom": "^18.2.0",
+        "react-router-dom": "^6.9.0",
+        "sass": "^1.59.2"
+    },
+    "devDependencies": {
+        "@types/react": "^18.0.27",
+        "@types/react-dom": "^18.0.10",
+        "@vitejs/plugin-react": "^3.1.0",
+        "eslint": "^8.36.0",
+        "eslint-config-prettier": "^8.7.0",
+        "prettier": "^2.8.4",
+        "vite": "^4.1.0"
+    },
+    "eslintConfig": {
+        "extends": [
+            "react-app",
+            "prettier"
+        ]
+    }
+}
