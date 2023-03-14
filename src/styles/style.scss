@@ -3,7 +3,8 @@
     --secondary: rgb(155 111 185);
     --third: rgba(237, 209, 255, 0.5);
     --fourth: yellowgreen;
-    --background-primary: rgb(53, 53, 53);
+    --fifth: rgba(37, 37, 37, 0.5);
+    --background-primary: rgb(19, 19, 19);
     --font-1: Arial, Helvetica, sans-serif;
 }
 
@@ -103,4 +104,28 @@ body {
             color: var(--fourth);
         }
     }
+}
+
+.posts {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    padding: 5rem;
+    justify-items: center;
+
+    .post {
+        display: flex;
+        flex-direction: column;
+        padding: 1rem;
+        width: 75%;
+        border: 1px solid var(--third);
+        background-color: var(--fifth);
+        border-radius: 25px;
+    }
+}
+
+.title {
+    text-align: center;
+    padding: 5rem 0 0 0;
+    color: var(--secondary);
 }
