@@ -1,13 +1,10 @@
 :root {
     --primary: snow;
-    --secondary: #2c2c2c;
-    --background-primary: radial-gradient(
-        circle farthest-corner at 10% 20%,
-        rgb(121, 121, 121) 0%,
-        rgb(53, 53, 53) 81.3%
-    );
-    --hover: #6ee2ff;
-    --font-1: "Courier New", monospace;
+    --secondary: rgb(155 111 185);
+    --third: rgba(237, 209, 255, 0.5);
+    --fourth: yellowgreen;
+    --background-primary: rgb(53, 53, 53);
+    --font-1: Arial, Helvetica, sans-serif;
 }
 
 * {
@@ -27,8 +24,83 @@ a {
 }
 
 body {
-    min-height: 100vh;
-    background-image: var(--background-primary);
+    background-color: var(--background-primary);
     color: var(--primary);
     font-family: var(--font-1);
+}
+
+.container {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 10vw;
+    background-color: rgb(0, 0, 0, 0.75);
+
+    .name {
+        letter-spacing: 3px;
+        color: var(--fourth);
+    }
+
+    .slogan {
+        letter-spacing: 6px;
+        color: var(--third);
+    }
+
+    .nav-links {
+        display: flex;
+        gap: 2.5rem;
+        color: var(--secondary);
+
+        a {
+            padding: 0.25rem;
+            transition: color 0.25s ease-in-out;
+
+            &:hover {
+                color: var(--fourth);
+            }
+        }
+    }
+
+    .active {
+        color: var(--fourth);
+    }
+}
+
+.footer {
+    display: flex;
+    height: 7.5vh;
+    justify-content: center;
+    background-color: rgb(0, 0, 0, 0.75);
+    margin-top: auto;
+
+    .about {
+        display: flex;
+        align-items: center;
+    }
+
+    .github-icon {
+        height: 25px;
+        padding-left: 10px;
+        padding: 0 10px;
+        transition: transform 1s ease-in-out;
+
+        &:hover {
+            transform: rotate(360deg);
+        }
+    }
+
+    a {
+        transition: color 0.25s ease-in-out;
+        color: var(--secondary);
+
+        &:hover {
+            color: var(--fourth);
+        }
+    }
 }

@@ -1,8 +1,31 @@
+import { Link, NavLink } from "react-router-dom";
+
+import logo from "../assets/favicon.png";
+
 const Header = () => {
     return (
-        <header>
-            <h1>Blog</h1>
-        </header>
+        <nav className="header">
+            <div>
+                <Link to="/blog/">
+                    <img src={logo} alt="logo" />
+                </Link>
+                <span className="name">Quill & Verse</span>
+                <span className="slogan"> Poetry and Prose</span>
+            </div>
+            <div>
+                <ul className="nav-links">
+                    <li>
+                        <NavLink to="/blog/"> Home</NavLink>
+                    </li>
+                    <li>
+                        <NavLink to="/blog/all"> All Posts</NavLink>
+                    </li>
+                    <li>
+                        <NavLink to="/blog/about"> About</NavLink>
+                    </li>
+                </ul>
+            </div>
+        </nav>
     );
 };
 

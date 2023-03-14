@@ -1,7 +1,19 @@
+import github from "../assets/GitHub-Mark-Light-120px-plus.png";
+
 const Footer = () => {
     return (
-        <footer>
-            <h1>footer</h1>
+        <footer className="footer">
+            <div className="about">
+                <span>
+                    <a href="https://www.theodinproject.com/lessons/nodejs-blog-api" id="odin">
+                        The Odin Project{" "}
+                    </a>
+                    | fatiharapoglu
+                </span>
+                <a href="https://github.com/fatiharapoglu">
+                    <img className="github-icon" src={github} alt="github-logo" />
+                </a>
+            </div>
         </footer>
     );
 };
