@@ -16,7 +16,7 @@ const App = () => {
         <div className="container">
             <Header />
             <Routes>
-                <Route path="/blog/" element={<Home />} />
+                <Route path="/blog/" element={<Home setPostID={setPostID} />} />
                 <Route path="/blog/all" element={<AllPosts setPostID={setPostID} />} />
                 <Route path="/blog/about" element={<About />} />
                 <Route path="/blog/all/*" element={<SinglePost postID={postID} />} />
