@@ -5,7 +5,7 @@ const AllPosts = (props) => {
     const [posts, setPosts] = useState({});
 
     const getAllPosts = async () => {
-        const response = await fetch("http://localhost:5200/api/v1/posts");
+        const response = await fetch("http://localhost:3000/api/v1/posts/published");
         const data = await response.json();
         setPosts(data);
     };
