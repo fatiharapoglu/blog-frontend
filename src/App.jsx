@@ -10,7 +10,7 @@ import SinglePost from "./components/SinglePost";
 import NotFound from "./components/NotFound";
 
 const App = () => {
-    const [postID, setPostID] = useState("");
+    const [postID, setPostID] = useState("640d0d07ab5a57d28d1f6ad3");
 
     return (
         <div className="container">

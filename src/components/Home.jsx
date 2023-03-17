@@ -25,10 +25,10 @@ const Home = (props) => {
         <div className="home">
             <header className="home-header">
                 <h1>Welcome to Quill & Verse</h1>
-                <h2>Where every word is a brushstroke and every sentence a masterpiece...</h2>
+                <h4>Where every word is a brushstroke and every sentence a masterpiece...</h4>
             </header>
+            <h1 className="title">LATEST POSTS</h1>
             <main>
-                <h1>LATEST POSTS</h1>
                 {latestPosts.posts &&
                     latestPosts.posts.map((post) => {
                         return (
