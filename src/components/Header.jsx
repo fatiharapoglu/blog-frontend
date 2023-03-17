@@ -9,7 +9,9 @@ const Header = () => {
                 <Link to="/blog/">
                     <img src={logo} alt="logo" />
                 </Link>
-                <span className="name">Quill & Verse</span>
+                <span className="name">
+                    Quill <span>&</span> Verse
+                </span>
                 <span className="slogan"> Poetry and Prose</span>
             </div>
             <div>
@@ -19,9 +21,6 @@ const Header = () => {
                     </li>
                     <li>
                         <NavLink to="/blog/all"> All Posts</NavLink>
-                    </li>
-                    <li>
-                        <NavLink to="/blog/about"> About</NavLink>
                     </li>
                 </ul>
             </div>

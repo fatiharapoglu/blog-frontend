@@ -25,7 +25,7 @@ const AllPosts = (props) => {
     return (
         <>
             <h1 className="title">ALL POSTS</h1>
-            <div className="posts">
+            <main className="posts">
                 {posts.posts &&
                     posts.posts.map((post) => {
                         return (
@@ -41,7 +41,7 @@ const AllPosts = (props) => {
                             </Link>
                         );
                     })}
-            </div>
+            </main>
         </>
     );
 };

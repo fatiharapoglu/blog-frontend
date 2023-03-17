@@ -28,6 +28,7 @@ const NewComment = (props) => {
 
     return (
         <form ref={formRef} onSubmit={handleSubmit}>
+            <h3>Leave a comment</h3>
             <label>
                 Username:
                 <input type="text" name="username" placeholder="Who are you?" required />

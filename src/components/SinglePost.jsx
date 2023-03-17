@@ -19,6 +19,16 @@ const SinglePost = (props) => {
         setComments(data);
     };
 
+    const formatDate = (date) => {
+        const newDate = new Date(date);
+        return newDate.toLocaleDateString("en-us", {
+            weekday: "short",
+            year: "numeric",
+            month: "short",
+            day: "numeric",
+        });
+    };
+
     useEffect(() => {
         try {
             getSinglePost();
@@ -42,9 +52,11 @@ const SinglePost = (props) => {
                     {comments.comments.map((comment) => {
                         return (
                             <ul key={comment._id} className="comment">
-                                <h3 className="comment-owner">{comment.username}</h3>
-                                <p className="comment-content">{comment.text}</p>
-                                <span className="comment-date">{comment.timestamp}</span>
+                                <div className="comment-main">
+                                    <h3>{comment.username}</h3>
+                                    <p>{comment.text}</p>
+                                </div>
+                                <div className="comment-date">{formatDate(comment.timestamp)}</div>
                             </ul>
                         );
                     })}

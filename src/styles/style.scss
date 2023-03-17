@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&family=Tangerine:wght@400;700&display=swap");
+
 :root {
     --primary: rgb(248, 230, 230);
     --secondary: rgb(155 111 185);
@@ -5,7 +7,8 @@
     --fourth: yellowgreen;
     --fifth: rgba(37, 37, 37, 0.5);
     --background-primary: rgb(19, 19, 19);
-    --font-1: Arial, Helvetica, sans-serif;
+    --font-1: "Montserrat", sans-serif;
+    --font-2: "Tangerine", cursive;
 }
 
 * {
@@ -40,17 +43,24 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 1rem 10vw;
+    padding: 1rem 20vw;
     background-color: rgb(0, 0, 0, 0.75);
 
     .name {
         letter-spacing: 3px;
         color: var(--fourth);
+
+        span {
+            font-size: 0.75rem;
+            color: var(--third);
+        }
     }
 
     .slogan {
-        letter-spacing: 6px;
+        letter-spacing: 3px;
         color: var(--third);
+        font-family: var(--font-2);
+        font-weight: 600;
     }
 
     .nav-links {
@@ -73,61 +83,11 @@ body {
     }
 }
 
-.footer {
-    display: flex;
-    height: 7.5vh;
-    justify-content: center;
-    background-color: rgb(0, 0, 0, 0.75);
-    margin-top: auto;
-
-    .about {
-        display: flex;
-        align-items: center;
-    }
-
-    .github-icon {
-        height: 25px;
-        padding-left: 10px;
-        padding: 0 10px;
-        transition: transform 1s ease-in-out;
-
-        &:hover {
-            transform: rotate(360deg);
-        }
-    }
-
-    a {
-        transition: color 0.25s ease-in-out;
-        color: var(--secondary);
-
-        &:hover {
-            color: var(--fourth);
-        }
-    }
-}
-
-.posts {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 1rem;
-    padding: 2rem;
-    justify-items: center;
-
-    .post {
-        display: flex;
-        flex-direction: column;
-        padding: 1rem;
-        width: 75%;
-        border: 1px solid var(--third);
-        background-color: var(--fifth);
-        border-radius: 0.5rem;
-    }
-}
-
 .title {
     text-align: center;
     color: var(--secondary);
     padding-top: 2rem;
+    letter-spacing: 5px;
 }
 
 .home {
@@ -136,55 +96,71 @@ body {
         display: flex;
         flex-direction: column;
         justify-content: center;
-        padding: 0 10rem;
+        padding: 0 20vw;
         gap: 1rem;
         background-color: rgba(0, 0, 0, 0.35);
-    }
 
-    main {
-        padding: 2rem 10rem 0;
+        h1 {
+            font-weight: normal;
+        }
+
+        h4 {
+            letter-spacing: 2px;
+            font-weight: normal;
+            font-size: 1rem;
+            color: var(--third);
+        }
+    }
+}
+
+.posts {
+    padding: 2rem 20vw 0;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+
+    .post {
         display: flex;
         flex-direction: column;
-        gap: 2rem;
+        gap: 1rem;
+        border-bottom: 1px dashed var(--third);
+        padding-bottom: 2rem;
+        position: relative;
 
-        .post {
-            display: flex;
-            flex-direction: column;
-            gap: 1rem;
-            border-bottom: 1px dashed var(--secondary);
-            padding-bottom: 1rem;
-            position: relative;
+        &::before {
+            content: "⮕";
+            font-size: x-large;
+            color: var(--fourth);
+            position: absolute;
+            left: -2rem;
+        }
 
-            &::before {
-                content: "⮕";
-                font-size: x-large;
-                color: var(--fourth);
-                position: absolute;
-                left: -2rem;
-            }
+        &::after {
+            content: "See more";
+            color: var(--fourth);
+            font-size: 0.75rem;
+            position: absolute;
+            right: 0;
+            bottom: 0.5rem;
+        }
 
-            &::after {
-                content: "See more";
-                color: var(--fourth);
-                font-size: 0.75rem;
-                position: absolute;
-                right: -5rem;
-                top: 0.5rem;
-            }
+        .post-title {
+            color: var(--primary);
+            font-weight: 400;
+        }
 
-            .post-title {
-                color: var(--primary);
-            }
+        .post-content {
+            color: var(--third);
+        }
 
-            &:hover .post-title {
-                color: var(--third);
-            }
+        &:hover .post-title {
+            color: var(--third);
         }
     }
 }
 
 .single-post-container {
-    padding: 0 10rem;
+    padding: 0 20vw;
 
     .single-post {
         padding: 3rem 0 10rem;
@@ -200,6 +176,48 @@ body {
     .single-post-content {
         font-size: 1.25rem;
         text-align: justify;
+        line-height: 2rem;
+        color: var(--third);
+    }
+
+    .comment-container {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        padding: 3rem 0;
+
+        .comment {
+            display: flex;
+            gap: 0.35rem;
+            padding: 1rem;
+            border: 1px solid var(--fifth);
+            border-radius: 5px;
+            justify-content: space-between;
+            align-items: center;
+
+            .comment-date {
+                font-size: 0.6rem;
+                align-self: flex-start;
+                color: var(--third);
+            }
+
+            .comment-main {
+                display: flex;
+                flex-direction: column;
+                gap: 1rem;
+
+                h3 {
+                    font-size: 0.6rem;
+                    text-transform: uppercase;
+                    letter-spacing: 1px;
+                    color: var(--secondary);
+                }
+
+                p {
+                    font-size: 0.75rem;
+                }
+            }
+        }
     }
 
     form {
@@ -208,10 +226,15 @@ body {
         align-items: center;
         padding-bottom: 3rem;
 
+        h3 {
+            font-weight: normal;
+        }
+
         label {
             font-weight: bold;
             padding: 0.5rem 0;
             width: 100%;
+            color: var(--third);
         }
 
         input,
@@ -244,6 +267,39 @@ body {
                 background-color: var(--fourth);
                 color: black;
             }
+        }
+    }
+}
+
+.footer {
+    display: flex;
+    height: 7.5vh;
+    justify-content: center;
+    background-color: rgb(0, 0, 0, 0.75);
+    margin-top: auto;
+
+    .about {
+        display: flex;
+        align-items: center;
+    }
+
+    .github-icon {
+        height: 25px;
+        padding-left: 10px;
+        padding: 0 10px;
+        transition: transform 1s ease-in-out;
+
+        &:hover {
+            transform: rotate(360deg);
+        }
+    }
+
+    a {
+        transition: color 0.25s ease-in-out;
+        color: var(--secondary);
+
+        &:hover {
+            color: var(--fourth);
         }
     }
 }
