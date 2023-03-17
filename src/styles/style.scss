@@ -303,3 +303,20 @@ body {
         }
     }
 }
+
+::-webkit-scrollbar {
+    width: 0.75rem;
+}
+
+::-webkit-scrollbar-track {
+    background-color: rgb(37, 37, 37);
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: var(--third);
+    border-radius: 2px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background-color: var(--secondary);
+}
