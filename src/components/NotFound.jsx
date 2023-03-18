@@ -1,7 +1,10 @@
+import { Link } from "react-router-dom";
+
 const NotFound = () => {
     return (
-        <div>
+        <div className="error">
             <h1>Page not found.</h1>
+            <Link to={"/blog/"}>Back to main page</Link>
         </div>
     );
 };
