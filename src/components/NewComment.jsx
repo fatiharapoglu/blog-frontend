@@ -37,7 +37,9 @@ const NewComment = (props) => {
                 Comment:
                 <textarea name="text" placeholder="What do you think?" required />
             </label>
-            <button type="submit">Submit</button>
+            <button className="btn" type="submit">
+                Submit
+            </button>
         </form>
     );
 };
