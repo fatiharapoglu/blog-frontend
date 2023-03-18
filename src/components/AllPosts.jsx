@@ -45,4 +45,5 @@ const AllPosts = (props) => {
         </>
     );
 };
+
 export default AllPosts;

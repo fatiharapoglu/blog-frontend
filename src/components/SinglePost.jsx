@@ -65,4 +65,5 @@ const SinglePost = (props) => {
         </div>
     );
 };
+
 export default SinglePost;
