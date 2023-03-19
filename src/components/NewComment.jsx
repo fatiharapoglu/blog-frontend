@@ -10,19 +10,24 @@ const NewComment = (props) => {
         const entries = Object.fromEntries(formData);
 
         try {
-            await fetch(`http://localhost:3000/api/v1/posts/${props.postID}/comments/new`, {
-                method: "POST",
-                body: JSON.stringify(entries),
-                headers: {
-                    "Content-Type": "application/json",
-                },
-            });
+            const res = await fetch(
+                `http://localhost:3000/api/v1/posts/${props.postID}/comments/new`,
+                {
+                    method: "POST",
+                    body: JSON.stringify(entries),
+                    headers: {
+                        "Content-Type": "application/json",
+                    },
+                }
+            );
+
+            if (res.status === 429)
+                return props.handleSnackbar("Too many requests. Please slow down.");
 
             props.setLen((current) => current + 1);
-            // snackbar here
-            console.log("snackbar");
+            props.handleSnackbar("Comment posted.");
         } catch (err) {
-            console.log(err);
+            props.handleSnackbar("Something went wrong. Please try again later.");
         }
     };
 

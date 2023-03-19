@@ -46,7 +46,11 @@ const SinglePost = (props) => {
                     <p className="single-post-content">{singlePost.post.text}</p>
                 </div>
             )}
-            <NewComment postID={props.postID} setLen={setLen} />
+            <NewComment
+                postID={props.postID}
+                setLen={setLen}
+                handleSnackbar={props.handleSnackbar}
+            />
             {comments.comments && (
                 <div className="comment-container">
                     {comments.comments.map((comment) => {

@@ -322,6 +322,20 @@ body {
     }
 }
 
+.snackbar {
+    min-width: 250px;
+    background-color: var(--fifth);
+    text-align: center;
+    border-radius: 0.5rem;
+    padding: 1rem 2rem;
+    position: fixed;
+    z-index: 10;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 10vh;
+    animation: fadein 0.5s, fadeout 0.5s 2.5s;
+}
+
 ::-webkit-scrollbar {
     width: 0.75rem;
 }
@@ -337,4 +351,28 @@ body {
 
 ::-webkit-scrollbar-thumb:hover {
     background-color: var(--secondary);
+}
+
+@keyframes fadein {
+    from {
+        bottom: 0;
+        opacity: 0;
+    }
+
+    to {
+        bottom: 10vh;
+        opacity: 1;
+    }
+}
+
+@keyframes fadeout {
+    from {
+        bottom: 10vh;
+        opacity: 1;
+    }
+
+    to {
+        bottom: 0;
+        opacity: 0;
+    }
 }
