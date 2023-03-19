@@ -1,11 +1,13 @@
 import { useEffect, useState } from "react";
 
 import NewComment from "./NewComment";
+import Loading from "./Loading";
 
 const SinglePost = (props) => {
     const [singlePost, setSinglePost] = useState({});
     const [comments, setComments] = useState({});
     const [len, setLen] = useState(0); // this is useless, just for re-render
+    const [isLoading, setIsLoading] = useState(true);
 
     const getSinglePost = async () => {
         const response = await fetch(`http://localhost:3000/api/v1/posts/${props.postID}`);
@@ -17,6 +19,7 @@ const SinglePost = (props) => {
         const response = await fetch(`http://localhost:3000/api/v1/posts/${props.postID}/comments`);
         const data = await response.json();
         setComments(data);
+        setIsLoading(false);
     };
 
     const formatDate = (date) => {
@@ -37,6 +40,8 @@ const SinglePost = (props) => {
             console.log(err);
         }
     }, [len]);
+
+    if (isLoading) return <Loading />;
 
     return (
         <div className="single-post-container">

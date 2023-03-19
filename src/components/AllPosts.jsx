@@ -1,13 +1,17 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 
+import Loading from "./Loading";
+
 const AllPosts = (props) => {
     const [posts, setPosts] = useState({});
+    const [isLoading, setIsLoading] = useState(true);
 
     const getAllPosts = async () => {
         const response = await fetch("http://localhost:3000/api/v1/posts/published");
         const data = await response.json();
         setPosts(data);
+        setIsLoading(false);
     };
 
     const selectPost = (e) => {
@@ -21,6 +25,8 @@ const AllPosts = (props) => {
             console.log(err);
         }
     }, []);
+
+    if (isLoading) return <Loading />;
 
     return (
         <>

@@ -1,8 +1,11 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 
+import Loading from "./Loading";
+
 const Home = (props) => {
     const [latestPosts, setLatestPosts] = useState({});
+    const [isLoading, setIsLoading] = useState(true);
 
     const selectPost = (e) => {
         props.setPostID(e.currentTarget.dataset.id);
@@ -12,7 +15,9 @@ const Home = (props) => {
         const response = await fetch("http://localhost:3000/api/v1/posts/latest");
         const data = await response.json();
         setLatestPosts(data);
+        setIsLoading(false);
     };
+
     useEffect(() => {
         try {
             getLatestPosts();
@@ -20,6 +25,8 @@ const Home = (props) => {
             console.log(err);
         }
     }, []);
+
+    if (isLoading) return <Loading />;
 
     return (
         <div className="home">

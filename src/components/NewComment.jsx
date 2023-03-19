@@ -1,10 +1,14 @@
-import React, { useRef } from "react";
+import React, { useRef, useState } from "react";
+
+import Loading from "./Loading";
 
 const NewComment = (props) => {
+    const [isLoading, setIsLoading] = useState(false);
     const formRef = useRef(null);
 
     const handleSubmit = async (e) => {
         e.preventDefault();
+        setIsLoading(true);
         const formData = new FormData(formRef.current);
         formData.append("belongsTo", props.postID);
         const entries = Object.fromEntries(formData);
@@ -20,16 +24,19 @@ const NewComment = (props) => {
                     },
                 }
             );
+            setIsLoading(false);
 
-            if (res.status === 429)
-                return props.handleSnackbar("Too many requests. Please slow down.");
+            if (res.status === 429) return props.handleSnackbar("Please slow down.");
 
             props.setLen((current) => current + 1);
             props.handleSnackbar("Comment posted.");
         } catch (err) {
             props.handleSnackbar("Something went wrong. Please try again later.");
+            setIsLoading(false);
         }
     };
+
+    if (isLoading) return <Loading />;
 
     return (
         <form ref={formRef} onSubmit={handleSubmit}>
