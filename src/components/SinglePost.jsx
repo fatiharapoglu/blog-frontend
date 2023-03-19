@@ -5,7 +5,7 @@ import NewComment from "./NewComment";
 const SinglePost = (props) => {
     const [singlePost, setSinglePost] = useState({});
     const [comments, setComments] = useState({});
-    const [len, setLen] = useState(0);
+    const [len, setLen] = useState(0); // this is useless, just for re-render
 
     const getSinglePost = async () => {
         const response = await fetch(`http://localhost:3000/api/v1/posts/${props.postID}`);
