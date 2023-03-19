@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 
 import NewComment from "./NewComment";
 import Loading from "./Loading";
+import FormatDate from "./FormatDate";
 
 const SinglePost = (props) => {
     const [singlePost, setSinglePost] = useState({});
@@ -22,16 +23,6 @@ const SinglePost = (props) => {
         setIsLoading(false);
     };
 
-    const formatDate = (date) => {
-        const newDate = new Date(date);
-        return newDate.toLocaleDateString("en-us", {
-            weekday: "short",
-            year: "numeric",
-            month: "short",
-            day: "numeric",
-        });
-    };
-
     useEffect(() => {
         try {
             getSinglePost();
@@ -49,6 +40,9 @@ const SinglePost = (props) => {
                 <div className="single-post">
                     <h1 className="single-post-title">{singlePost.post.title}</h1>
                     <p className="single-post-content">{singlePost.post.text}</p>
+                    <p className="single-post-date">
+                        <FormatDate date={singlePost.post.timestamp} />
+                    </p>
                 </div>
             )}
             <NewComment
@@ -65,7 +59,9 @@ const SinglePost = (props) => {
                                     <h3>{comment.username}</h3>
                                     <p>{comment.text}</p>
                                 </div>
-                                <div className="comment-date">{formatDate(comment.timestamp)}</div>
+                                <div className="comment-date">
+                                    <FormatDate date={comment.timestamp} />
+                                </div>
                             </ul>
                         );
                     })}

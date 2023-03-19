@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 
 import Loading from "./Loading";
+import FormatDate from "./FormatDate";
 
 const AllPosts = (props) => {
     const [posts, setPosts] = useState({});
@@ -44,6 +45,9 @@ const AllPosts = (props) => {
                             >
                                 <h1 className="post-title">{post.title}</h1>
                                 <p className="post-content">{post.text}</p>
+                                <p className="post-date">
+                                    <FormatDate date={post.timestamp} />
+                                </p>
                             </Link>
                         );
                     })}
