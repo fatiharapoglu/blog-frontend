@@ -1,19 +1,11 @@
 {
     "name": "blog-frontend",
     "private": true,
-    "version": "0.1.0",
-    "description": "react",
-    "repository": {
-        "type": "git",
-        "url": "git+https://github.com/fatiharapoglu/blog-frontend.git"
-    },
-    "keywords": [],
+    "version": "1.0.0",
     "author": "Fatih Arapoğlu",
     "license": "MIT",
-    "bugs": {
-        "url": "https://github.com/fatiharapoglu/blog-frontend/issues"
-    },
-    "homepage": "https://github.com/fatiharapoglu/blog-frontend#readme",
+    "keywords": [],
+    "description": "react",
     "type": "module",
     "scripts": {
         "dev": "vite",
