@@ -30,10 +30,10 @@ const App = () => {
         <div className="container">
             <Header />
             <Routes>
-                <Route path="/blog/" element={<Home setPostID={setPostID} />} />
-                <Route path="/blog/all" element={<AllPosts setPostID={setPostID} />} />
+                <Route path="/" element={<Home setPostID={setPostID} />} />
+                <Route path="/all" element={<AllPosts setPostID={setPostID} />} />
                 <Route
-                    path="/blog/all/*"
+                    path="/all/*"
                     element={<SinglePost postID={postID} handleSnackbar={handleSnackbar} />}
                 />
                 <Route path="*" element={<NotFound />} />

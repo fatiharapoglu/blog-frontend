@@ -41,7 +41,7 @@ const Home = (props) => {
                     latestPosts.posts.map((post) => {
                         return (
                             <Link
-                                to={`/blog/all/${post._id}`}
+                                to={`/all/${post._id}`}
                                 key={post._id}
                                 className="post"
                                 data-id={post._id}

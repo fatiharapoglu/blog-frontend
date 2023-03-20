@@ -6,7 +6,7 @@ const Header = () => {
     return (
         <nav className="header">
             <div>
-                <Link to="/blog/">
+                <Link to="/">
                     <img src={logo} alt="logo" />
                 </Link>
                 <span className="name">
@@ -17,10 +17,10 @@ const Header = () => {
             <div>
                 <ul className="nav-links">
                     <li>
-                        <NavLink to="/blog/">Home</NavLink>
+                        <NavLink to="/">Home</NavLink>
                     </li>
                     <li>
-                        <NavLink to="/blog/all">All Posts</NavLink>
+                        <NavLink to="/all">All Posts</NavLink>
                     </li>
                 </ul>
             </div>
