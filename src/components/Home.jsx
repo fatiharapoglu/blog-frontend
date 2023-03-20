@@ -13,7 +13,7 @@ const Home = (props) => {
     };
 
     const getLatestPosts = async () => {
-        const response = await fetch("http://localhost:3000/api/v1/posts/latest");
+        const response = await fetch("https://express-blog-api.cyclic.app/api/v1/posts/latest");
         const data = await response.json();
         setLatestPosts(data);
         setIsLoading(false);

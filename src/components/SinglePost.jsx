@@ -11,13 +11,17 @@ const SinglePost = (props) => {
     const [isLoading, setIsLoading] = useState(true);
 
     const getSinglePost = async () => {
-        const response = await fetch(`http://localhost:3000/api/v1/posts/${props.postID}`);
+        const response = await fetch(
+            `https://express-blog-api.cyclic.app/api/v1/posts/${props.postID}`
+        );
         const data = await response.json();
         setSinglePost(data);
     };
 
     const getComments = async () => {
-        const response = await fetch(`http://localhost:3000/api/v1/posts/${props.postID}/comments`);
+        const response = await fetch(
+            `https://express-blog-api.cyclic.app/api/v1/posts/${props.postID}/comments`
+        );
         const data = await response.json();
         setComments(data);
         setIsLoading(false);

@@ -9,7 +9,7 @@ const AllPosts = (props) => {
     const [isLoading, setIsLoading] = useState(true);
 
     const getAllPosts = async () => {
-        const response = await fetch("http://localhost:3000/api/v1/posts/published");
+        const response = await fetch("https://express-blog-api.cyclic.app/api/v1/posts/published");
         const data = await response.json();
         setPosts(data);
         setIsLoading(false);

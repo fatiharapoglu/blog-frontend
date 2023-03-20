@@ -15,7 +15,7 @@ const NewComment = (props) => {
 
         try {
             const res = await fetch(
-                `http://localhost:3000/api/v1/posts/${props.postID}/comments/new`,
+                `https://express-blog-api.cyclic.app/api/v1/posts/${props.postID}/comments/new`,
                 {
                     method: "POST",
                     body: JSON.stringify(entries),
