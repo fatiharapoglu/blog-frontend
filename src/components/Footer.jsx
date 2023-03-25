@@ -5,7 +5,7 @@ const Footer = () => {
         <footer className="footer">
             <div className="about">
                 <span>
-                    <a href="https://www.theodinproject.com/lessons/nodejs-blog-api" id="odin">
+                    <a href="https://www.theodinproject.com/" id="odin">
                         The Odin Project{" "}
                     </a>
                     | fatiharapoglu
