@@ -13,7 +13,7 @@ const Footer = () => {
                         Fatih Arapoğlu
                     </a>
                 </span>
-                <a href="https://github.com/fatiharapoglu/photo-tag" target="_blank" rel="noreferrer">
+                <a href="https://github.com/fatiharapoglu/blog-frontend" target="_blank" rel="noreferrer">
                     <img className="github-icon" src={github} alt="github-logo" />
                 </a>
             </div>
