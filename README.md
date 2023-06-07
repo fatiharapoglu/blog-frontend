@@ -19,6 +19,7 @@ This is the Front-end part of the MERN Blog Project, The other parts are:
 -   Comments for each post.
 -   Snackbar feedback.
 -   Rate limiter for users to comment.
+-   Responsive design.
 
 ## Helper Dependencies
 
@@ -30,3 +31,13 @@ This is the Front-end part of the MERN Blog Project, The other parts are:
 ## How It Looks
 
 ![ss](./src/assets/readme.png)
+
+## Contact
+
+⮕ [Portfolio](https://fatiharapoglu.dev)
+
+⮕ [LinkedIn](https://www.linkedin.com/in/fatiharapoglu/)
+
+## License
+
+Distributed under the [MIT](https://choosealicense.com/licenses/mit/) License.

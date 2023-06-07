@@ -175,7 +175,6 @@ body {
         padding: 3rem 0 10rem;
         display: flex;
         flex-direction: column;
-        gap: 2rem;
     }
 
     .single-post-title {
@@ -183,15 +182,25 @@ body {
     }
 
     .single-post-content {
+        margin-top: 2rem;
         font-size: 1.25rem;
         text-align: justify;
         line-height: 2rem;
         color: var(--third);
+        white-space: pre-line;
     }
 
     .single-post-date {
+        margin-top: 2rem;
         font-size: 0.75rem;
         text-align: end;
+    }
+
+    .single-post-author {
+        margin-top: 0.75rem;
+        font-size: 0.75rem;
+        text-align: end;
+        font-weight: bold;
     }
 
     .comment-container {
@@ -407,5 +416,59 @@ body {
     }
     100% {
         transform: rotate(360deg);
+    }
+}
+
+@media (width <= 750px) {
+    .home {
+        .home-header {
+            display: none;
+        }
+    }
+
+    .posts {
+        margin: 3rem;
+        padding: 0;
+
+        .post {
+            .post-title {
+                font-size: 1rem;
+            }
+
+            .post-content {
+                font-size: 0.75rem;
+            }
+        }
+    }
+
+    .single-post-container {
+        padding: 0;
+        margin: 3rem;
+
+        .single-post-title {
+            font-size: 1.5rem;
+        }
+
+        .single-post-content {
+            font-size: 1rem;
+        }
+    }
+
+    .header {
+        padding: 1rem 3rem;
+        white-space: nowrap;
+        gap: 1rem;
+
+        .name {
+            display: none;
+        }
+    }
+
+    .title {
+        font-size: 1.5rem;
+    }
+
+    .footer {
+        font-size: 0.75rem;
     }
 }

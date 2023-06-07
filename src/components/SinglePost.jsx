@@ -11,17 +11,13 @@ const SinglePost = (props) => {
     const [isLoading, setIsLoading] = useState(true);
 
     const getSinglePost = async () => {
-        const response = await fetch(
-            `https://express-blog-api.cyclic.app/api/v1/posts/${props.postID}`
-        );
+        const response = await fetch(`https://express-blog-api.cyclic.app/api/v1/posts/${props.postID}`);
         const data = await response.json();
         setSinglePost(data);
     };
 
     const getComments = async () => {
-        const response = await fetch(
-            `https://express-blog-api.cyclic.app/api/v1/posts/${props.postID}/comments`
-        );
+        const response = await fetch(`https://express-blog-api.cyclic.app/api/v1/posts/${props.postID}/comments`);
         const data = await response.json();
         setComments(data);
         setIsLoading(false);
@@ -47,13 +43,10 @@ const SinglePost = (props) => {
                     <p className="single-post-date">
                         <FormatDate date={singlePost.post.timestamp} />
                     </p>
+                    <p className="single-post-author">Fatih Arapoğlu</p>
                 </div>
             )}
-            <NewComment
-                postID={props.postID}
-                setLen={setLen}
-                handleSnackbar={props.handleSnackbar}
-            />
+            <NewComment postID={props.postID} setLen={setLen} handleSnackbar={props.handleSnackbar} />
             {comments.comments && (
                 <div className="comment-container">
                     {comments.comments.map((comment) => {
